@@ -1,3 +1,4 @@
+name             'download_make_install'
 maintainer       "Takayuki SHIMIZUKAWA"
 maintainer_email "shimizukawa@gmail.com"
 license          "Apache 2.0"

@@ -1,7 +1,7 @@
 EXT_TYPE_CMD = {
   '.tar' => ['tar', 'xf'],
   '.tgz' => ['tar', 'zxf'],
-  '.tar.gz' => ['tar', 'zxf'],
+  '.tar.gz' => ['tar', '-xvf'],
   '.tar.bz2' => ['tar', 'jxf'],
   '.zip' => ['unzip', ''],
   '.gz' => ['gzip', '-d'],
