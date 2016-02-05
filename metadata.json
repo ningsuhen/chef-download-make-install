@@ -1,0 +1,48 @@
+{
+  "name": "download_make_install",
+  "description": "Installs/Configures download-make-install",
+  "long_description": "download-make-install Cookbook\n===============================\n\nThis cookbook run download target source, extract, configure, make, make install process.\n\nRequirements\n------------\n\n#### cookbook\n- `build-essential` - building some target source needs gcc/g++ and related headers.\n\nAttributes\n----------\n\n#### download-make-install::default\n\n`node['download_make_install']['install_prefix']` - install path prefix: default is '/usr/local'\n`node['download_make_install']['packages']` - build target source definitions hash-array. hash include few keys. `url` is target source file location, required. `configure_options` value will pass-through to ./configure option, optional. `target` is expected installed file/directory after installation, optional. if `target` is omitted then try to download/install everytime.\n\nUsage\n-----\n#### download-make-install::default\n\nInclude `download_make_install` in your node's `run_list` and set packages information:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[download-make-install]\"\n  ],\n  \"override_attributes\" : {\n    \"download_make_install\": {\n      \"install_prefix\" : \"/usr/local/\",\n      \"packages\": [\n        {\n          \"url\": \"http://mecab.googlecode.com/files/mecab-0.994.tar.gz\",\n          \"configure_options\": \"--with-charset=utf8 --enable-utf8-only\",\n          \"target\": \"/usr/local/lib/libmecab.so\"\n        },\n        {\n          \"url\": \"http://mecab.googlecode.com/files/mecab-ipadic-2.7.0-20070801.tar.gz\",\n          \"configure_options\": \"--with-charset=utf8\",\n          \"target\": \"/usr/local/lib/mecab\"\n        },\n        {\n          \"url\": \"http://www.sqlite.org/2013/sqlite-autoconf-3080200.tar.gz\",\n          \"target\": \"/usr/local/bin/sqlite3\"\n        }\n      ]\n    }\n  }\n}\n```\n\nContributing\n------------\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: Takayuki Shimizukawa\nLicense: Apache 2.0\n",
+  "maintainer": "Takayuki SHIMIZUKAWA",
+  "maintainer_email": "shimizukawa@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+
+  },
+  "dependencies": {
+    "build-essential": ">= 0.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.1.2",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ]
+}
